@@ -7,6 +7,7 @@ Release:	3
 License:	LGPL
 Group:		X11/Applications/Networking
 Source0:	http://mozcalc.mozdev.org/%{_realname}-%{version}.xpi
+# Source0-md5:	4d4ab8cf0a9caa0774fabfd31e5b3860
 Source1:	%{_realname}-installed-chrome.txt
 URL:		http://mozcalc.mozdev.org/
 BuildRequires:	unzip

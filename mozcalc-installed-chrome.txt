@@ -1,0 +1,5 @@
+content,install,url,jar:resource:/chrome/mozcalc.jar!/content/
+locale,install,url,jar:resource:/chrome/mozcalc.jar!/locale/en-US/
+locale,install,url,jar:resource:/chrome/mozcalc.jar!/locale/de-AT/
+skin,install,url,jar:resource:/chrome/mozcalc.jar!/skin/modern/
+skin,install,url,jar:resource:/chrome/mozcalc.jar!/skin/classic/

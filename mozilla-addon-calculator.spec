@@ -1,20 +1,23 @@
-Summary:        Calculator for Mozilla
-Summary(pl):    Kalkulator dla Mozilli
-Name:           mozilla-addon-calculator
-Version:        0.4.0
-Release:        1
-License:        LGPL
-Group:          X11/Applications/Networking
-Source0:	http://mozcalc.mozdev.org/mozcalc-0.4.0.xpi
-Source1:        %{_realname}-installed-chrome.txt
-URL:            http://qlookup.mozdev.org/
-BuildRequires:  unzip
-Requires:       mozilla >= 1.0
-BuildRoot:      %{tmpdir}/%{_realname}-%{version}-root-%(id -u -n)
 
 %define         _prefix         /usr/X11R6
 %define         _chromedir      %{_libdir}/mozilla/chrome
 %define		_realname	mozcalc
+
+Summary:        Calculator for Mozilla
+Summary(pl):    Kalkulator dla Mozilli
+Name:           mozilla-addon-calculator
+Version:        0.4.0
+Release:        2
+License:        LGPL
+Group:          X11/Applications/Networking
+Source0:	http://mozcalc.mozdev.org/mozcalc-0.4.0.xpi
+Source1:        %{_realname}-installed-chrome.txt
+URL:            http://mozcalc.mozdev.org/
+BuildRequires:  unzip
+Requires:       mozilla >= 1.0
+BuildRoot:      %{tmpdir}/%{_realname}-%{version}-root-%(id -u -n)
+
+
 
 %description
 %description -l pl

@@ -3,7 +3,7 @@ Summary(pl):	Kalkulator dla Mozilli
 Name:		mozilla-addon-calculator
 %define		_realname	mozcalc
 Version:	0.4.0
-Release:	4
+Release:	5
 License:	LGPL
 Group:		X11/Applications/Networking
 Source0:	http://mozcalc.mozdev.org/%{_realname}-%{version}.xpi
@@ -11,12 +11,13 @@ Source0:	http://mozcalc.mozdev.org/%{_realname}-%{version}.xpi
 Source1:	%{_realname}-installed-chrome.txt
 URL:		http://mozcalc.mozdev.org/
 BuildRequires:	unzip
+Requires(post,postun):	mozilla
 Requires(post,postun):	textutils
 Requires:	mozilla >= 1.0-7
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{_realname}-%{version}-root-%(id -u -n)
 
-%define         _chromedir      %{_datadir}/mozilla/chrome
+%define		_chromedir	%{_datadir}/mozilla/chrome
 
 %description
 This is scientific calculator which supports Reverse Polish Notation.
@@ -40,11 +41,19 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 umask 022
-cat %{_chromedir}/*-installed-chrome.txt >%{_chromedir}/installed-chrome.txt
+cat %{_chromedir}/*-installed-chrome.txt >%{_chromedir}/installed-chrome.txt ||:
+rm -f %{_libdir}/mozilla/components/{compreg,xpti}.dat \
+	%{_datadir}/mozilla/chrome/{chrome.rdf,overlayinfo/*/*/*.rdf} ||:
+MOZILLA_FIVE_HOME=%{_libdir}/mozilla %{_bindir}/regxpcom ||:
+MOZILLA_FIVE_HOME=%{_libdir}/mozilla %{_bindir}/regchrome ||:
 
 %postun
 umask 022
 cat %{_chromedir}/*-installed-chrome.txt >%{_chromedir}/installed-chrome.txt
+rm -f %{_libdir}/mozilla/components/{compreg,xpti}.dat \
+	%{_datadir}/mozilla/chrome/{chrome.rdf,overlayinfo/*/*/*.rdf}
+MOZILLA_FIVE_HOME=%{_libdir}/mozilla %{_bindir}/regxpcom
+MOZILLA_FIVE_HOME=%{_libdir}/mozilla %{_bindir}/regchrome
 
 %files
 %defattr(644,root,root,755)

@@ -3,7 +3,7 @@ Summary(pl):	Kalkulator dla Mozilli
 Name:		mozilla-addon-calculator
 %define		_realname	mozcalc
 Version:	0.4.0
-Release:	3
+Release:	4
 License:	LGPL
 Group:		X11/Applications/Networking
 Source0:	http://mozcalc.mozdev.org/%{_realname}-%{version}.xpi
@@ -16,7 +16,7 @@ Requires:	mozilla >= 1.0-7
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{_realname}-%{version}-root-%(id -u -n)
 
-%define         _chromedir      %{_libdir}/mozilla/chrome
+%define         _chromedir      %{_datadir}/mozilla/chrome
 
 %description
 This is scientific calculator which supports Reverse Polish Notation.

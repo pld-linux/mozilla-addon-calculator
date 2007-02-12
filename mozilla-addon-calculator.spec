@@ -1,5 +1,5 @@
 Summary:	Calculator for Mozilla
-Summary(pl):	Kalkulator dla Mozilli
+Summary(pl.UTF-8):   Kalkulator dla Mozilli
 Name:		mozilla-addon-calculator
 %define		_realname	mozcalc
 Version:	0.4.0
@@ -23,9 +23,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This is scientific calculator which supports Reverse Polish Notation.
 It's fully integrated with Mozilla.
 
-%description -l pl
-Kalkulator naukowy z odwrotn± notacj± polsk±, w pe³ni zintegrowany z
-Mozill±.
+%description -l pl.UTF-8
+Kalkulator naukowy z odwrotnÄ… notacjÄ… polskÄ…, w peÅ‚ni zintegrowany z
+MozillÄ….
 
 %prep
 

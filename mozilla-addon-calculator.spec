@@ -1,5 +1,5 @@
 Summary:	Calculator for Mozilla
-Summary(pl.UTF-8):   Kalkulator dla Mozilli
+Summary(pl.UTF-8):	Kalkulator dla Mozilli
 Name:		mozilla-addon-calculator
 %define		_realname	mozcalc
 Version:	0.4.0
